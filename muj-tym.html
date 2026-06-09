@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Můj tým</title>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+     <!-- Editační formulář (skrytý na začátku)-->
+     <div class="section">
+          <h2>Můj tým</h2>
+          <div id="editFormContainer">
+               <h3>Upravit člena</h3>
+               <form id="editForm">
+                    <div>
+                         <input type="text" id="editName" placeholder="Jméno člena" required>
+                         <input type="text" id="editEmail" placeholder="Email">
+                    </div>
+                    <input type="text" id="editPin" placeholder="Pin">
+                    <input type="number" id="editBody" placeholder="Body">
+                    <input type="number" id="editPozice" placeholder="Pozice"><br>
+                    <button type="submit">Uložit změny</button>
+                    <button type="button" id="cancelEdit">Zrušit</button>
+                    <div>
+                         <button type="button" id="deleteMember">Smazat člena</button>
+                    </div>
+               </form>
+          </div>
+
+          <!-- Strom -->
+          <div class="container" id="container"></div>
+
+          <!-- Formulář pro přidání člena -->
+          <form id="addForm">
+               <input type="text" id="name" placeholder="Jméno nového člena" required>
+               <input type="text" id="parent" placeholder="Nadřízený" required>
+               <input type="text" id="pin" placeholder="Pin">
+               <input type="text" id="email" placeholder="Email">
+               <input type="number" id="body" placeholder="Body">
+               <input type="number" id="pozice" placeholder="Pozice"> <br>
+               <button type="submit"> + Přidat člena</button>
+          </form>
+     </div>
+
+
+     <div id="controls">
+          <button id="exportData">Exportovat strom</button>
+          <button id="importData">Importovat strom</button>
+          <input type="file" id="importFile" style="display:none">
+          <button id="newTree">Vytvořit nový strom</button>
+          <button id="toggleTheme">Přepnout motiv</button>
+
+          <div id="searchContainer">
+               <input type="search" id="searchInput" placeholder="Hledej jméno...">
+               <button id="searchBtn">Hledat</button>
+               <button id="clearSearch">Vymazat</button>
+          </div>
+     </div>
+     <button id="resetData">Vymazat uložená data</button>
+
+
+     <button id="exportPNG">📷 Export PNG</button>
+     <button id="exportPDF">📄 Export PDF</button>
+     
+     <div>
+          <button id="expandAll">Rozbalit vše</button>
+          <button id="collapseAll">Sbalit vše</button>
+     </div>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+     <script src="js/script.js"></script>
+
+</body>
+
+</html>

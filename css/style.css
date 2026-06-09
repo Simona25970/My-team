@@ -1,0 +1,355 @@
+* {
+     padding: 0;
+     margin: 0;
+     font-family: 'Inter', sans-serif;
+     box-sizing: border-box;
+}
+
+body,
+html {
+     background: #f4f6f9;
+     padding: 10px;
+}
+
+header {
+     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(104, 88, 88, 0.5)), url("img/linetree.jpg");
+     background-size: cover;
+     width: 100%;
+     height: 100vh;
+     background-attachment: fixed;
+}
+
+header a {
+     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+     background: #333;
+     color: #fff;
+     font-size: 35px;
+     text-decoration: none;
+     float: right;
+     margin-top: 100px;
+     margin-right: 50px;
+     padding: 5px 15px;
+     border: none;
+     border-radius: 10px;
+}
+
+h1 {
+     text-align: center;
+     margin-bottom: 35px;
+}
+
+h2 {
+     font-family: 'Inter', sans-serif;
+     font-size: 28px;
+     text-align: center;
+     margin-top: 25px;
+}
+
+h3 {
+     text-align: center;
+     margin-bottom: 15px;
+     overflow-wrap: break-word !important;
+}
+
+form {
+     margin: 40px auto;
+     text-align: center;
+}
+
+form input {
+     background: #fff;
+     color: #000;
+     padding: 5px 8px;
+     margin: 5px;
+     border: 1px solid #b9b3b3;
+     border-radius: 4px;
+}
+
+.label {
+     background: #ffffff;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+form button {
+     padding: 5px 12px;
+     margin-top: 20px;
+     font-size: 14px;
+     background: #4a6f;
+     color: white;
+     font-weight: bold;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+}
+
+form button:hover {
+     background: rgb(67, 160, 98);
+     color: #fff;
+}
+
+
+/* Tlačítka import/export / vytvořit / přepnout motiv / hledat / vymazat */
+#controls {
+     text-align: center;
+     margin-top: 20px;
+}
+
+#controls button {
+     font-size: 14px;
+     font-weight: bold;
+     padding: 6px 12px;
+     margin: 4px;
+     margin-bottom: 30px;
+     background: #4a6f !important;
+     color: #fff;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+}
+
+#controls button:hover {
+     background: rgb(67, 160, 98) !important;
+}
+
+#controls input[type="search"] {
+     padding: 6px 8px;
+     color: #333;
+     border-radius: 4px;
+     border: 1px solid #bbb;
+     margin-right: 6px;
+}
+
+#searchContainer #clearSearch {
+     background: #dadcd3 !important;
+     color: #333 !important;
+}
+
+.highlight {
+     background: #ff7d0a !important;
+}
+
+/* label se lehce posune*/
+.highlight h3 {
+     background: linear-gradient(transparent 60%, rgba(255, 235, 115, 0.12));
+     padding: 2px;
+     border-radius: 3px;
+}
+
+.container {
+     padding: 30px 5px;
+     margin: 10px;
+     font-size: 11px;
+     display: flex;
+     flex-direction: column;
+}
+
+.container ul {
+     display: flex;
+     justify-content: center;
+     padding-top: 2px 0;
+     position: relative;
+}
+
+.container ul ul {
+     flex-direction: row;
+     justify-content: center;
+     margin-left: 0;
+}
+
+.container ul li {
+     display: flex;
+     flex: 0 auto;
+     flex-direction: column;
+     text-align: center;
+     padding: 5px;
+     position: relative;
+}
+
+.container>ul>li {
+     margin-top: calc(-0.9 - 2px);
+}
+
+.container ul li::before {
+     content: '';
+     position: absolute;
+     top: -8px;
+     left: 0;
+     right: 0;
+     height: 1.5px;
+     background: #aea7a7;
+}
+
+.container ul li::after {
+     border-left: 0;
+}
+
+.container ul li:first-child::before,
+.container ul li:last-child::after {
+     border-top: 0;
+}
+
+.container ul li label {
+     font-size: 12px;
+     width: auto;
+     height: auto;
+     display: block;
+     text-align: left;
+     padding: 25px 3px;
+     margin: 0 auto;
+     border: 2px solid #6e6b6b;
+     color: #000;
+     border-radius: 5px;
+     margin-bottom: 1.5em;
+     position: relative;
+     cursor: pointer;
+     background: #efeaea;
+}
+
+.label-header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+.label-header p {
+     display: block;
+     margin-block-start: 1em;
+     margin-block-end: 1em;
+     margin-inline-start: 2px;
+     margin-inline-end: 2px;
+     unicode-bidi: isolate;
+}
+
+.container ul li label::after,
+.container ul li label::before {
+     content: '';
+     width: 2px;
+     position: absolute;
+     top: -13px;
+     height: 0.9em;
+     left: 50%;
+     background: #aea7a7;
+}
+
+.container ul li label:hover {
+     background: #f1f1f1;
+}
+
+.container ul li:first-child::before {
+     left: 50%;
+}
+
+.container ul li:last-child::before {
+     right: 50%;
+}
+
+.container ul li label::after {
+     top: auto;
+     bottom: calc(-0.7em - 2px);
+     width: 2px;
+}
+
+.container ul li label:last-child::after {
+     display: none;
+}
+
+.container>ul>li>label::before {
+     display: none;
+}
+
+.container ul li input {
+     display: none;
+}
+
+.icon-buttons {
+     display: flex;
+     margin-left: auto;
+     gap: 4px;
+}
+
+.toggle-btn {
+     background: none;
+     color: #333;
+     border: 1px solid #888;
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 0.9em;
+     margin: 0 9px;
+     width: 22px;
+     height: 22px;
+}
+
+.toggle-btn:hover {
+     background: #444;
+     color: #fff;
+}
+
+.collapsed>ul {
+     display: none;
+}
+
+.toggle-icon {
+     font-weight: bold;
+     color: #335;
+     margin-right: 50px;
+     cursor: pointer;
+     border: 1px solid #9c9797;
+     border-radius: 6px;
+     width: 20px;
+     height: 20px;
+     text-align: center;
+     padding: 0px;
+}
+
+.hidden {
+     display: none !important;
+}
+
+#editFormContainer {
+     text-align: center;
+     margin-top: 20px;
+     display: none;
+}
+
+#deleteMember {
+     background: #dadcd3;
+     color: #333;
+     margin-top: 15px;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     font-size: 0.9em;
+     font-size: 15px;
+}
+
+#resetData {
+     background: #dadcd3;
+     color: #222;
+     padding: 4px 12px;
+     margin-left: 45%;
+     margin-top: 20px;
+     border: none;
+     border-radius: 4px;
+     font-weight: bold;
+     cursor: pointer;
+}
+
+/* Tmavý mód */
+body.dark {
+     background: #dbd6d6;
+     color: #fff;
+}
+
+body.dark .container ul li label {
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+body.dark .container ul li::before,
+body.dark .container ul li label::after,
+body.dark .container ul li label::before {
+     background: #d1d8be;
+}
+
+body.dark #controls button {
+     background: #555;
+}
