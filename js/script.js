@@ -124,7 +124,7 @@ document.getElementById("addForm").addEventListener("submit", e => {
 
      function findAndAddMember(person) {
           if (person.name.toLowerCase() === parentName.toLowerCase()) {
-               person.clenove.push({ name, body, pozice, email, clenove: [] });
+               person.clenove.push({ name, pin, body, pozice, email, clenove: [] });
                return true;
           }
           for (let child of person.clenove) {
@@ -196,6 +196,7 @@ document.getElementById("deleteMember").addEventListener("click", () => {
      saveData();
      renderContainer();
 });
+
 // Export 
 document.getElementById("exportData").addEventListener("click", () => {
      const json = JSON.stringify(data, null, 2);
@@ -376,9 +377,11 @@ clearSearchBtn.addEventListener("click", () => {
 // PDF, PNG
 document.getElementById("exportPDF").addEventListener("click", async () => {
 
-     const canvas = await html2canvas(
-          document.getElementById("container")
-     );
+     const canvas = await html2canvas(document.body, {
+          width: document.body.scrollWidth,
+          height: document.body.scrollHeight
+     });
+
 
      const imgData = canvas.toDataURL("image/png");
 
@@ -392,15 +395,18 @@ document.getElementById("exportPDF").addEventListener("click", async () => {
 
 document.getElementById("exportPNG").addEventListener("click", async () => {
 
-     const canvas = await html2canvas(
-          document.getElementById("container")
-     );
+     const canvas = await html2canvas(document.body, {
+          width: document.body.scrollWidth,
+          height: document.body.scrollHeight
+     });
+
      const imgData = canvas.toDataURL("image/png");
      const link = document.createElement("a");
      link.href = imgData;
      link.download = "liniovy-strom.png";
      link.click();
 });
+
 
 document.getElementById("expandAll").addEventListener("click", () => {
      document.querySelectorAll(".container ul").forEach(ul => {
